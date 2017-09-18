@@ -11,7 +11,7 @@ use Phalcon\Flash\Direct as Flash;
 
 // Simple database connection to localhost
 $di->set('mongo', function() {
-    $mongo = new MongoClient("mongodb://10.10.2.102:27017");
+    $mongo = new MongoClient();
     return $mongo->selectDb("test");
     // return $mongo;
 }, true);
