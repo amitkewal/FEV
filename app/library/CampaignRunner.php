@@ -25,8 +25,8 @@ class CampaignRunner
 		$checkCAP=new CappingService();
 		if($checkCAP->checkCampaignCapping($campaign_data['camp_name']))
 		{
-			return("BDAEEE");
-			exit("AAAAAAAAAAA");
+			return("BDAE");
+			// exit("AAAAAAAAAAA");
 			// $query=QueryBuilderService::buildESQuery($campaign_data['segment']);
 		}
 		else

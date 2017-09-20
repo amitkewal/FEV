@@ -26,7 +26,7 @@ class ExampleTest extends \Codeception\TestCase\Test
         $result=$user->fetchdetail();
 
         $this->assertEquals('BDAE', $result);
-
+        
 
 
         // exit("+++");
