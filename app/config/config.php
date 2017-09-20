@@ -5,16 +5,16 @@
  */
 defined('BASE_PATH') || define('BASE_PATH', getenv('BASE_PATH') ?: realpath(dirname(__FILE__) . '/../..'));
 defined('APP_PATH') || define('APP_PATH', BASE_PATH . '/app');
-
+use Phalcon\Db\Adapter\Pdo\Postgresql;
 return new \Phalcon\Config([
-    // 'database' => [
-    //      'adapter'     => 'mysql',
-    //     'host'        => 'localhost',
-    //     'username'    => 'root',
-    //     'password'    => 'root',
-    //     'dbname'      => 'campaign',
-    //     'charset'     => 'utf8',
-    // ],
+    'database' => [
+        'adapter'     => 'Postgresql',
+        'host'        => 'localhost',
+        'dbname'      => 'fev',
+        "port"        => 5432,
+        'username'    => 'postgres',
+        'password'    => 'fev',
+    ],
     'application' => [
        'controllersDir' => __DIR__ . '/../../app/controllers/',
         'modelsDir'      => __DIR__ . '/../../app/models/',
@@ -31,3 +31,4 @@ return new \Phalcon\Config([
         'baseUri'        => preg_replace('/public([\/\\\\])index.php$/', '', $_SERVER["PHP_SELF"]),
     ]
 ]);
+

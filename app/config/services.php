@@ -7,7 +7,7 @@ use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
 use Phalcon\Mvc\Model\Metadata\Memory as MetaDataAdapter;
 use Phalcon\Session\Adapter\Files as SessionAdapter;
 use Phalcon\Flash\Direct as Flash;
-
+use Phalcon\Db\Adapter\Pdo\Postgresql
 
 // Simple database connection to localhost
 $di->set('mongo', function() {
@@ -73,26 +73,26 @@ $di->setShared('view', function () {
 /**
  * Database connection is created based in the parameters defined in the configuration file
  */
-// $di->setShared('db', function () {
-//     $config = $this->getConfig();
+$di->setShared('db', function () {
+    $config = $this->getConfig();
 
-//     $class = 'Phalcon\Db\Adapter\Pdo\\' . $config->database->adapter;
-//     $params = [
-//         'host'     => $config->database->host,
-//         'username' => $config->database->username,
-//         'password' => $config->database->password,
-//         'dbname'   => $config->database->dbname,
-//         'charset'  => $config->database->charset
-//     ];
+    $class = 'Phalcon\Db\Adapter\Pdo\\' . $config->database->adapter;
+    $params = [
+        'host'     => $config->database->host,
+        'username' => $config->database->username,
+        'password' => $config->database->password,
+        'dbname'   => $config->database->dbname,
+        'charset'  => $config->database->charset
+    ];
 
-//     if ($config->database->adapter == 'Postgresql') {
-//         unset($params['charset']);
-//     }
+    if ($config->database->adapter == 'Postgresql') {
+        unset($params['charset']);
+    }
 
-//     $connection = new $class($params);
+    $connection = new $class($params);
 
-//     return $connection;
-// });
+    return $connection;
+});
 
 
 /**

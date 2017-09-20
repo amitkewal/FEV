@@ -2,17 +2,16 @@
 
 class CappingService
 {
-	private $redis;
-	public function __construct($campaign_id,$caps)
+	private $data_id,$caps;
+	public function __construct($data_id,$caps)
 	{
-		print_r($caps);	 
-		exit("AMIT\n\n");
+		$this->data_id=$data_id;
+		$this->caps=$caps;
 	}
 	public function isCapped($data,$channel)
 	{
-		print_r($data);
-		exit("popo\n\n\n");
-		return true;
+		echo "$channel\\n\n\n $this->data_id\n\n";
+		return($data["$channel"]<=$this->caps["$this->data_id"]["$channel"])?true:false;
 	}
 }
 ?>

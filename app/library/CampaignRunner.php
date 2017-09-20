@@ -8,10 +8,23 @@ include('/home/amitkewal/src/FEV/app/models/Campaign.php');
 
 class CampaignRunner
 {
-	public function fetchdetail()
+	private $campaign_id;
+	private $channel;
+	private $time_zone;
+	public function __construct($campaign_id,$channel,$time_zone)
 	{
+		$this->campaign_id=$campaign_id;
+		$this->channel=$channel;
+		$this->time_zone=$time_zone;
+	}
+
+	public function fetchDetail()
+	{
+		$campaigh_info=new Campaign();
+		var_dump($campaigh_info->find());
+		exit("popopoo\n\n\n");
 		// $campaigns = new Campaign();
-		// $response=$campaigns->fetchDetails('Birthday Premium Teaser Mailer one day before');
+		// $response=$campaigns->fetchDetails('Dummy');
 		// print_r($response);
 		// exit("[][][][]");
         //camp,segment,channel,global-setting
@@ -37,7 +50,5 @@ class CampaignRunner
 	
 }
 
-$dummy=new CampaignRunner();
-$dummy->fetchdetail();
 
 ?>
