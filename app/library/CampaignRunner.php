@@ -5,6 +5,7 @@ use Phalcon\Http\Request;
 include('/home/amitkewal/src/FEV/app/library/CappingService.php');
 // include(APP_PATH.'/models/Campaign.php');
 include('/home/amitkewal/src/FEV/app/models/Campaign.php');
+use Phalcon\Db\Adapter\Pdo\Postgresql;
 
 class CampaignRunner
 {
@@ -16,6 +17,8 @@ class CampaignRunner
 		$this->campaign_id=$campaign_id;
 		$this->channel=$channel;
 		$this->time_zone=$time_zone;
+		print_r($this->connection->describeColumns("posts"));
+		exit("OOOOOO\n\n");
 	}
 
 	public function fetchDetail()

@@ -11,7 +11,7 @@ return new \Phalcon\Config([
         'adapter'     => 'Postgresql',
         'host'        => 'localhost',
         'dbname'      => 'fev',
-        "port"        => 5432,
+        "port"        =>  5432,
         'username'    => 'postgres',
         'password'    => 'fev',
     ],

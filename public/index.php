@@ -1,7 +1,7 @@
 <?php
 use Phalcon\Di\FactoryDefault;
 include_once SITE_ROOT . 'vendor/autoload.php';
-echo phpinfo();
+// echo phpinfo();
 error_reporting(E_ALL);
 
 define('BASE_PATH', dirname(__DIR__));
